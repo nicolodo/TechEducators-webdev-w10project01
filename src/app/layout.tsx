@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider, Show, SignInButton, SignUpButton, UserButton} from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
+import NavBar from "@/components/NavBar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,6 +31,7 @@ export default function RootLayout({
       >
         <ClerkProvider>
           <header className="flex justify-end items-center p-4 gap-4 h-16 border">
+            <NavBar />
             <Show when="signed-out">
               <SignInButton />
               <SignUpButton>
