@@ -38,3 +38,6 @@ Supabase
 File Notes: 
     /utils/db.js : This sets up the db connection such that I don't need to 
     set it up for each page 
+
+    Components:
+    NavBar: This lets you navigate between pages, placed in main layout
