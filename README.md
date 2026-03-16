@@ -35,4 +35,6 @@ Supabase
     sender
     reply_to
 
-
+File Notes: 
+    /utils/db.js : This sets up the db connection such that I don't need to 
+    set it up for each page 
