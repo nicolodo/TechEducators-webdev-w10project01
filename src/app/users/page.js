@@ -10,6 +10,7 @@ export default async function Page() {
     const result = await db.query(`select * from w10profiles`)
     const profiles = result.rows
     console.log(profiles)
+    console.log('auth')
 
     return (
         <div>
@@ -17,7 +18,7 @@ export default async function Page() {
             <h2>Listing all our wonderful users</h2>
             {profiles.map(profile => (
                 <Link href={`/profiles/${profile.id}`} key={profile.id}>
-                    {profile.name}
+                    {profile.username}
                 </Link>
             ))}
         </div>

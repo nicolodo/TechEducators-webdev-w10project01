@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs/server"
+import { auth, currentUser } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
 import { db } from "@/utils/connect"
 
@@ -9,9 +9,13 @@ export default function OnboardingPage() {
         // we need to submit the username, bio, and clerk id to our database
         const {username, bio} = Object.fromEntries(formData)
         const {userId} = await auth()
+        const currentUser = await currentUser();
+        console.log(currentUser)
+
+        // console.log(userId)
 
         const inserted = await db.query(
-            `insert into user_account (username, bio, clerk_id) 
+            `insert into w10profiles (username, bio, id) 
             values ($1, $2, $3)`, [username, bio, userId])
 
         redirect(`/users/${userId}`)

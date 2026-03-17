@@ -14,13 +14,12 @@ The user profile page
 Supabase
     
     TABLE user
-    id
+    id // the id is the one I get back from Clerk
     bio
-    nickname
     profile_pic
     username
-    password
-    Auth
+    <!-- password -->
+    <!-- Auth -->
 
     <!-- login -> -->
 
